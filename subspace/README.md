@@ -1,6 +1,6 @@
 # Установка нескольких нод Subspace на одном сервере через DOCKER
 
-[Офицальный гайд](https://docs.subspace.network/protocol/farm/farming/)
+[Официальный гайд](https://docs.subspace.network/protocol/farm/farming/)
 
 Требования к серверу: 
 
