@@ -1,5 +1,8 @@
 # Установка нескольких нод Subspace на одном сервере через DOCKER
 
+_Нода занимает примерно 50гб+- (если указывать размер plot 25GB)_
+_Рекомендуется не использовать HDD, он плохо справляется с этой задачей_
+_Синхронизированная нода потребляет порядка 5
 
 ## Устанавливаем ноду 1
 ### Создание кошелька
@@ -71,6 +74,8 @@ docker-compose up -d
 docker-compose logs --tail=1000 -f
 ```
 
+Не стоит пугаться, если данное сообщение не сразу появится в логах, нужно немного подождать.
+
 Заветные логи выглядят так:
 
 ![alt text](https://i.imgur.com/vwOBdDc.png)
@@ -116,3 +121,31 @@ docker-compose up -d
 ```
 docker-compose logs --tail=1000 -f
 ```
+#### Команды
+
+Остановка ноды
+```
+docker-compose down
+```
+Просмотр запущенных контейнеров
+```
+docker ps
+```
+Статистика использования ресурсов контейнерами
+```
+docker stats
+```
+### Удаление 
+```
+cd $HOME/subspace1
+docker-compose down -v
+cd $HOME && rm -rf $HOME/subspace1/
+```
+
+```
+#удаление ноды 2
+cd $HOME/subspace2
+docker-compose down -v
+cd $HOME && rm -rf $HOME/subspace2/
+```
+
