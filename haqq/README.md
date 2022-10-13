@@ -40,3 +40,26 @@ nano/root/panic/.env
 ![](https://i.imgur.com/hzxTuoY.png)
 
 Сохраняем комбинацией CTRL + X --- ENTER
+
+### БОТ
+
+Добавляем @BotFather в телеграм
+
+![](https://i.imgur.com/YwEzs1s.png)
+
+Производим интересный диалог с ботом, благо, требования его просты и вполне понятны
+
+![](https://i.imgur.com/C2Ocj9b.png)
+
+
+
+Бот даст нам ссылку на нашего бота, пишем ему Start 
+
+
+Переходим по адрессу 
+
+`api.telegram.org/bot<token>/getUpdates` 
+
+,где <token> меняем на токен API, которым вежливо поделился с нами бот в последнем сообщении
+  
+   
