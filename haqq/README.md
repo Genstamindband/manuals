@@ -1,4 +1,4 @@
-## Установка системы оповещения PANIC для вашей ноды на примере HAQQ Testnet
+## Установка системы оповещения PANIC для вашей ноды для HAQQ Testnet
 
 ### Установка утилит 
 ```
@@ -24,3 +24,19 @@ chmod +x /usr/local/bin/docker-compose && ln -s /usr/local/bin/docker-compose /u
 git clone https://github.com/SimplyVC/panic
 cd panic
 ```
+
+### Настройка файла .env
+
+
+Далее нам потребуется знать IP нашего сервера, для этого есть команда:
+```
+curl ifconfig.me
+```
+Придумываем имя и пароль, прафим .env
+```
+nano/root/panic/.env
+```
+
+![](https://i.imgur.com/hzxTuoY.png)
+
+Сохраняем комбинацией CTRL + X --- ENTER
