@@ -73,7 +73,7 @@ wget -O subspace-node https://github.com/subspace/subspace/releases/download/gem
 wget -O subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-2a-2022-sep-10/subspace-farmer-ubuntu-x86_64-gemini-2a-2022-sep-10
 chmod +x subspace*
 source ~/.bash_profile
-mkdir /usr/local/bin/$SUBSPACE_ACCOUNT /root/.local/share/$SUBSPACE_ACCOUNT
+mkdir -p /usr/local/bin/$SUBSPACE_ACCOUNT /root/.local/share/$SUBSPACE_ACCOUNT
 mv subspace* /usr/local/bin/$SUBSPACE_ACCOUNT
 ```
 
