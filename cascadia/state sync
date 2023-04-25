@@ -20,5 +20,5 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" ~/.cascadiad/con
 
 mv $HOME/.cascadiad/priv_validator_state.json.backup $HOME/.cascadiad/data/priv_validator_state.json
 
-sudo systemctl start cascadiad && sudo journalctl -u cascadiad -f --no-hostname -o cat
+sudo systemctl restart cascadiad && sudo journalctl -u cascadiad -f --no-hostname -o cat
 ```
