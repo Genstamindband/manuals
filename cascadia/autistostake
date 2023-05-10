@@ -1,0 +1,38 @@
+                                                                               
+#!/bin/bash
+GREEN_COLOR='\033[0;32m'
+RED_COLOR='\033[0;31m'
+WITHOU_COLOR='\033[0m'
+DELAY=300 #in secs - how often restart the script 
+ACC_NAME=wallet #example: = ACC_NAME=wallet_qwwq_54
+NODE="tcp://localhost:46657" #change it only if you use another rpc port of your node
+CHAIN_NAME=cascadia_6102-1
+FEES=0aCC
+FEES1=0aCC
+IDEP_PASSWORD=
+for (( ;; )); do
+        echo -e "Get reward from Delegation"
+        echo ${IDEP_PASSWORD} | cascadiad tx distribution withdraw-rewards cascadiavaloper1xl67uln4 --from wallet --gas auto --gas-adjustment=1.2>
+
+        for (( timer=30; timer>0; timer-- ))
+        do
+                printf "* sleep for ${RED_COLOR}%02d${WITHOUT_COLOR} sec\r" $timer
+                sleep 1
+        done
+
+        BAL=$(cascadiad q bank balances cascadia14w0638hmhzu22reacv7khcf0h -o json | jq -r '.balances | .[].amount');
+        BAL=$(($BAL-1000000))
+        echo -e "BALANCE: ${GREEN_COLOR}${BAL}${WITHOU_COLOR} aCC\n"
+        echo -e "Stake ALL\n"
+        if (( BAL > 1000000 )); then
+        echo ${IDEP_PASSWORD} | cascadiad tx staking delegate cascadiavaloper1xl67uln4cpxlyjnqlyvx ${BAL}aCC --from wallet --gas auto --gas-adjustment=1.2 -->        else
+        echo -e "BALANCE: ${GREEN_COLOR}${BAL}${WITHOU_COLOR} aCC BAL < 10000000 ((((\n"
+        fi
+
+        for (( timer=${DELAY}; timer>0; timer-- ))
+        do
+                printf "* sleep for ${RED_COLOR}%02d${WITHOU_COLOR} sec\r" $timer
+                sleep 1
+        done       
+
+done
