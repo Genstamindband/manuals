@@ -23,4 +23,4 @@ gaiad tx ibc-transfer transfer transfer channel-2768 <empower-address> 1000000ua
 Empower —> Stargaze
 
 empowerd tx ibc-transfer transfer transfer channel-1  <stargaze-address>  10umpwr --from <empower-address> --chain-id elgafar-1 --packet-timeout-height 0-0 --fees 200umpwr
-
+empowerd tx ibc-transfer transfer transfer channel-2 <stargaze-address> 10umpwr --from <empower-address> --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr 
