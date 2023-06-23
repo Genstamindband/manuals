@@ -1,4 +1,6 @@
 # IBC 
+This is a quick guide with command templates for the task: "IBC Testing". To execute them via the CLI, you must have the Empowerchain node installed, and the binaries of another node must be installed along the ibc route.
+
 
 ## OSMO  osmo-test-5
 ### Empower —> Osmo
